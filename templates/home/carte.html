@@ -1,0 +1,220 @@
+{% extends './base.html' %}
+{% block content %}
+        <main>
+            <div class="container mt-4">
+                <!-- <div class="d-flex align-items-enter mb-5">
+                    <h3>Carte de {{user.nom}} {{user.postnom}} {{user.prenom}}</h3> &nbsp;&nbsp;&nbsp;
+                    <a href="{% url 'home:pdf' %}" class="btn-sm btn-success">Imprimer</a>
+                </div>
+
+                <div class="card-view mb-5">
+                    <div class="d-flex">
+                        <div class="card-item-1">
+                            <div class="ontent" style="
+                            padding: 15px;
+                            border-radius: 10px;
+                            width: 500px;
+                            height: 250px;
+                            background-color: #fff;
+                            margin-bottom: 13px;
+                            border: 1px solid #ccc;">
+                                <div class="row align-items-center">
+                                    <div class="col-2">
+                                        <img src="/static/img/unikin.png" width="50" alt="unikin">
+                                    </div>
+                                    <div class="col-10 p-0">
+                                        <h6 class="text-center">UNIVERSITE DE KINSHASA</h6>
+                                        <h6 class="text-center">CARTE DE LA BIBLIOTHEQUE DE MEDECINE</h6>
+                                    </div>
+                                </div>
+                                <hr class="my-2">
+                                <div class="row">
+                                    <div class="col-3">
+                                        {% if user.photo %}
+                                        <img src="{{user.photo.url}}" style="width: 100%; height: 100px; object-fit: cover; object-position: top;" alt="">
+                                        {% else %}
+                                        <img src="/static/img/ruben.jpg" style="width: 100%; height: 100px; object-fit: cover; object-position: top;" alt="">
+                                        {% endif %}
+                                        
+                                    </div>
+                                    <div class="col-5 p-0">
+                                        <small><b>Nom: {{user.nom}}</b></small>
+                                        <small><b>Post-nom: {{user.postnom}}</b></small>
+                                        <small><b>Prénom: {{user.prenom}}</b></small>
+                                        <small><b>Email: {{user.email}}</b></small>
+                                        <small><b>Lieu de naissance: {{user.lieu_naissance}}</b></small>
+                                        <small><b>Date de naissance: {{user.date_naissance}}</b></small>
+                                        <small><b>Adresse: {{user.adresse}}</b></small>
+                                    </div>
+                                    <div class="col-4">
+                                        <small><b>Télephone: {{user.telephone}}</b></small>
+                                        <small><b>Sexe: {{user.sexe}}</b></small>
+                                        <img src="{{user.qr_code.url}}" alt="qu-r_code" width="95">
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end">
+                                    <small>Fait à kinshasa, le {{user.date|date:'d/m/Y'}}</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        &nbsp;&nbsp; &nbsp;&nbsp;
+
+                        <div class="card-item-2">
+                            <div class="card">
+                                <div class="title">
+                                    <div class="logo"><img src="/static/img/unikin.png" alt=""></div>
+                                    <div>
+                                        <h1>Université de Kinshasa</h1>
+                                        <h2>Faculté de Médecine</h2>
+                                        <h3>Laboratoire Général</h3>
+                                    </div>
+                                </div>
+                                <div class="photo">
+                                    {% if user.photo %}
+                                    <img src="{{user.photo.url}}" alt="">
+                                    {% else %}
+                                    <img src="/static/img/ruben.jpg" alt="">
+                                    {% endif %}
+                                    
+                                </div>
+                                <div class="info">
+                                    <div class="wrapper">
+                                        <span class="head">Nom :</span>
+                                        <span>{{user.nom}}</span>
+                                    </div>
+                                    <div class="wrapper">
+                                        <span class="head">Postnom :</span>
+                                        <span>{{user.postnom}}</span>
+                                    </div>
+                                    <div class="wrapper">
+                                        <span class="head">Prénom :</span>
+                                        <span>{{user.prenom}}</span>
+                                    </div>
+                                    <div class="wrapper">
+                                        <span class="head">Sexe :</span>
+                                        <span>{{user.sexe}}</span>
+                                    </div>
+                                    <div class="wrapper">
+                                        <span class="head">Date de naissance :</span>
+                                        <span>{{user.date_naissance}}</span>
+                                    </div>
+                                    <div class="wrapper">
+                                        <span class="head">Téléphone :</span>
+                                        <span>{{user.telephone}}</span>
+                                    </div>
+                                    <div class="wrapper">
+                                        <span class="head">Adresse :</span>
+                                        <span>{{user.adresse}}</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex qrCode">
+                                    <img src="{{user.qr_code.url}}" alt="qr_code" width="80" height="80">
+                                    <div class="depInfo">
+                                        <h2>Carte d'étudiant</h2>
+                                        <div>
+                                            <span class="first">Grade/Promotion :</span>
+                                            <span>P6/847125</span>
+                                        </div>
+                                        <div>
+                                            <span class="first">Dept./Filiaire :</span>
+                                            <span>Pharmacie</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                
+                <div id="the-card" class="card-container mb-4">
+                    <div class="row h-100 m-0">
+                        <div class="col-6 left-side p-2 text-center">
+                        </div>
+                        <div class="col-6 right-side pt-3">
+                        </div>
+                        <div class="logo-container">
+                            <img src="/static/img/logo-medecine.png" width="100" alt="">
+                        </div>
+                        <div class="row h-100 m-0 position-absolute text-container">
+                            <div class="col-6 p-2 text-center">
+                                <h5 class="m-0" style="font-size: 0.7rem;">REPUBLIQUE DEMOCRATIQUE DU CONGO</h5>
+                                <p class="my-0" style="font-size: 0.5rem;">MINISTERE DE L'ENSEIGNEMENT SUPERIEURE ET UNIVERSITAIRE</p>
+                                <h2 style="font-size: 1rem;">UNIVERSITE DE KINSHASA</h2>
+                                <img src="/static/img/unikin.png" alt="unikin" width="40" height="40"> <br>
+                                <img src="{{user.photo.url}}" alt="picture" width="100" height="100" style="float: left; margin-top: 20px; margin-left: 20px; object-fit: cover;">
+                            </div>
+    
+                            <div class="col-6 pt-3">
+                                <div class="d-flex flex-column align-items-center">
+                                    <h6 class="text-white mb-1">{{user.nom}} {{user.postnom}}</h6>
+                                    <span class="text-white">{{user.prenom}}</span>
+                                    <hr class="mt-2 mb-1" style="height: 2px; width: 100px; background-color: rgb(248, 211, 0); opacity: 1; border-radius: 10px;">
+                                    <span class="text-white">étudiant</span>
+                                    <img src="{{user.qr_code.url}}" width="80" alt="qr_code">
+                                </div>
+                                <div class="d-block" style="margin-left: 17px; margin-top: 6px;">
+                                    <strong class="text-white mb-1">Grade/Promotion : </strong> <span class="text-white">D3/140325</span> <br>
+                                    <strong class="text-white mb-1">Dept./Filiaire : </strong> <span class="text-white">D3/140325</span> <br>
+                                    <span class="text-white">{{user.telephone}}</span> <br>
+                                    <span class="text-white">{{user.email}}</span> <br>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="items">
+                            <div class="item1"></div>
+                            <div class="item2">
+                                <i class="fa fa-phone-volume text-white d-block mb-1" style="font-size: 1.2rem;"></i>
+                                <i class="fa fa-at text-white d-block mb-2" style="font-size: 1.2rem;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="download-btn" class="btn btn-success mb-4">Télécharger</button>
+
+                <!-- <div class="card-container mb-4">
+                    <div class="row h-100 m-0">
+                        <div class="col-6 left-side p-2 text-center">
+                            <h5 class="m-0" style="font-size: 0.7rem;">REPUBLIQUE DEMOCRATIQUE DU CONGO</h5>
+                            <p class="my-1" style="font-size: 0.5rem;">MINISTERE DE L'ENSEIGNEMENT SUPERIEURE ET UNIVERSITAIRE</p>
+                            <h2 style="font-size: 1rem;">UNIVERSITE DE KINSHASA</h2>
+                            <img src="/static/img/unikin.png" alt="unikin" width="40" height="40"> <br>
+                            <img src="/static/img/ruben.jpg" alt="picture" width="90" height="90" style="float: left; margin-top: 30px; margin-left: 20px; object-fit: cover;">
+                        </div>
+
+                        <div class="col-6 right-side pt-3">
+                            <div class="d-flex flex-column align-items-center">
+                                <h6 class="text-white mb-1">{{user.nom}} {{user.postnom}}</h6>
+                                <span>{{user.prenom}}</span>
+                                <hr class="mt-2 mb-1" style="height: 2px; width: 100px; background-color: rgb(248, 211, 0); opacity: 1; border-radius: 10px;">
+                                <span>étudiant</span>
+                                <img src="{{user.qr_code.url}}" width="80" alt="qr_code">
+                            </div>
+                            <div class="d-block mt-4">
+                                <strong class="text-white mb-1">Grade/Promotion : </strong> <span>D3/140325</span> <br>
+                                <strong class="text-white mb-1">Dept./Filiaire : </strong> <span>D3/140325</span> <br>
+                                <span>{{user.telephone}}</span> <br>
+                                <span>{{user.email}}</span> <br>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </main>
+
+        <script>
+            let btn = document.getElementById('download-btn');
+            btn.addEventListener('click', function(){
+                const screenTarget = document.getElementById('the-card');
+                html2canvas(screenTarget).then((canvas)=>{
+                    const base64image = canvas.toDataURL('image/png');
+                    var anchor = document.createElement('a');
+                    anchor.setAttribute('href', base64image)
+                    anchor.setAttribute('download', 'mycard.png');
+                    anchor.click();
+                    anchor.remove();
+                })
+            })
+        </script>
+{% endblock %}

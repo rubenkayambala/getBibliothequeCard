@@ -1,0 +1,116 @@
+{% extends './base.html' %}
+{% block content %}
+        <main class="mt-3">
+            <h5 class="mb-3 text-center">FICHE D'IDENTIFICATION POUR LA BIBLIOTHEQUE/ETUDIANT</h4>
+            <hr class="my-2">
+            <form method="post" enctype="multipart/form-data" class="log-form mb-5">
+                {% if messages %}
+                {% for message in messages %}
+                <small class="text-danger">{{message}}</small>
+                {% endfor %}
+                {% endif %}
+                {% csrf_token %}
+                <div id="first">
+                    <label for="">
+                        Nom
+                        {{form.nom}}
+                    </label>
+                    <label for="">
+                        Post-nom
+                        {{form.postnom}}
+                    </label>
+                    <label for="">
+                        Prenom
+                        {{form.prenom}}
+                    </label>
+                    <label for="">
+                        Sexe
+                        {{form.sexe}}
+                    </label>
+                    <label for="">
+                        Date de naissance
+                        {{form.date_naissance}}
+                    </label>
+                    <label for="">
+                        Téléphone
+                        {{form.telephone}}
+                    </label>
+                    <label for="">
+                        Adresse
+                        {{form.adresse}}
+                    </label>
+                    <label for="">
+                        Promotion
+                        {{form.promotion}}
+                    </label>
+                    <label for="">
+                        Filière
+                        {{form.filiere}}
+                    </label>
+                    <label for="">
+                        Photo
+                        {{form.photo}}
+                    </label>
+                    <button id="next-btn" class="btn btn-info mt-2 px-5">Suivant</button>
+                </div>
+
+                <div id="last" class="d-none">
+                    <label for="">
+                        Email
+                        {{form.email}}
+                    </label>
+                    <label for="">
+                        Lieu de naissance
+                        {{form.lieu_naissance}}
+                    </label>
+                    <label for="">
+                        Année academique
+                        {{form.annee_academique}}
+                    </label>
+                    <label for="">
+                        Nom du Père
+                        {{form.nom_pere}}
+                    </label>
+                    <label for="">
+                        Contact du Père
+                        {{form.contact_pere}}
+                    </label>
+                    <label for="">
+                        Nom de la Mère
+                        {{form.nom_mere}}
+                    </label>
+                    <label for="">
+                        Contact de la Mère
+                        {{form.contact_mere}}
+                    </label>
+                    <label for="">
+                        Nom du Tuteur
+                        {{form.nom_tuteur}}
+                    </label>
+                    <label for="">
+                        Contact du Tuteur
+                        {{form.contact_tuteur}}
+                    </label>
+                    <label for="">
+                        Nom d'urgence
+                        {{form.nom_urgence}}
+                    </label>
+                    <label for="">
+                        Contact d'urgence'
+                        {{form.contact_urgence}}
+                    </label>
+                    <button type="submit" class="btn btn-success px-5">Enregistrer</button>
+                </div>
+            </form>
+        </main>
+        
+    <script>
+        let first = document.getElementById('first');
+        let last = document.getElementById('last');
+        let next = document.getElementById('next-btn');
+        next.addEventListener('click', ()=>{
+            first.classList.toggle('d-none')
+            last.classList.toggle('d-none')
+        })
+    </script>
+{% endblock %}

@@ -1,0 +1,129 @@
+{% extends './base.html' %}
+{% block content %}
+        <main>
+            <div class="container my-5">
+                <h3>Fiche d'enregistrement</h3>
+                <table class="table border my-4">
+                    <tr>
+                        <td>
+                            <span>Nom</span>
+                            <h6>{{user.nom}}</h6>
+                        </td>
+                        <td>
+                            <span>Post-nom</span>
+                            <h6>{{user.postnom}}</h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>Prénom</span>
+                            <h6>{{user.prenom}}</h6>
+                        </td>
+                        <td>
+                            <span>Sexe</span>
+                            <h6>{{user.sexe}}</h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>Lieu de naissance</span>
+                            <h6>{{user.lieu_naissance}}</h6>
+                        </td>
+                        <td>
+                            <span>Date de naissance</span>
+                            <h6>{{user.date_naissance}}</h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>Téléphone</span>
+                            <h6>{{user.telephone}}</h6>
+                        </td>
+                        <td>
+                            <span>Email</span>
+                            <h6>{{user.email}}</h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <span>Adresse</span>
+                            <h6>{{user.adresse}}</h6>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class="table border my-4">
+                    <tr>
+                        <td>
+                            <span>Promotion</span>
+                            <h6>{{user.promotion}}</h6>
+                        </td>
+                        <td>
+                            <span>Année academique</span>
+                            <h6>{{user.annee_academique}}</h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>Nom du Père</span>
+                            <h6>{{user.nom_pere}}</h6>
+                        </td>
+                        <td>
+                            <span>Contact du Père</span>
+                            <h6>{{user.contact_pere}}</h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>Nom du Mère</span>
+                            <h6>{{user.nom_mere}}</h6>
+                        </td>
+                        <td>
+                            <span>Contact du Mère</span>
+                            <h6>{{user.contact_mere}}</h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>Nom du Tuteur</span>
+                            <h6>{{user.nom_tuteur}}</h6>
+                        </td>
+                        <td>
+                            <span>Contact du Tuteur</span>
+                            <h6>{{user.contact_tuteur}}</h6>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class="table border my-4">
+                    <tr>
+                        <td>
+                            <span>Noms de la personne à contacter en cas d'urgence</span>
+                            <h6>{{user.nom_urgence}}</h6>
+                        </td>
+                        <td>
+                            <span>Contact</span>
+                            <h6>{{user.contact_urgence}}</h6>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class="table border my-4">
+                    <tr>
+                        <td>
+                            <span>Code QR</span>
+                            {% if user.qr_code %}
+                            <img src="{{user.qr_code.url}}" class="d-block mt-1" width="100" alt="qr_code">
+                            {% endif %}
+                        </td>
+                        <td>
+                            <span>Date</span>
+                            <h6>Le {{user.date|date:'d/m/Y'}}</h6>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </main>
+        
+        <script></script>
+{% endblock %}

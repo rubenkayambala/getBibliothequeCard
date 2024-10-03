@@ -1,0 +1,43 @@
+{% extends './base.html' %}
+{% block content %}
+        <main>
+            <div class="container mt-4">
+                <h3>Liste d'enregistrements</h3>
+                <table class="table border">
+                    <tr>
+                        <td>Photo</td>
+                        <td>Nom</td>
+                        <td>Post-nom</td>
+                        <td>Prénom</td>
+                        <td>Sexe</td>
+                        <td>Email</td>
+                        <td>Téléphone</td>
+                        <td>Lieu de naissance</td>
+                        <td>Date de naissance</td>
+                        <td>Adresse</td>
+                        <td>Voir</td>
+                    </tr>
+                    {% for user in users %}
+                    <tr>
+                        <td class="pb-3">
+                            <img src="{{user.photo.url}}" width="50" alt="{{user.nom}}">
+                        </td>
+                        <td class="pb-3">{{user.nom}}</td>
+                        <td class="pb-3">{{user.postnom}}</td>
+                        <td class="pb-3">{{user.prenom}}</td>
+                        <td class="pb-3">{{user.sexe}}</td>
+                        <td class="pb-3">{{user.email}}</td>
+                        <td class="pb-3">{{user.telephone}}</td>
+                        <td class="pb-3">{{user.lieu_naissance}}</td>
+                        <td class="pb-3">{{user.date_naissance}}</td>
+                        <td class="pb-3">{{user.adresse}}</td>
+                        <td class="pb-3">
+                            <a href="{% url 'home:carte' user.id %}" class="btn btn-info py-1 mt-2">Voir la carte</a>
+                            <a href="{% url 'home:detail' user.id %}" class="btn btn-primary py-1 mt-2">Voir la fiche</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </main>
+{% endblock %}
